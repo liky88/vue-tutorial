@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-for</title>
+        <link rel="stylesheet" href="demo.css"/>
+    </head>
+
+    <body>
+        <div id = "app">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--loop people with each element person-->
+                    <tr v-for="person in people">
+                        <td>{{ person.name  }}</td>
+                        <td>{{ person.age  }}</td>
+                        <td>{{ person.sex  }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script src="../common/js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                people: [{
+                    name:'jack',
+                    age:30,
+                    sex:'Male'
+                },
+                {
+                    name:'bill',
+                    age:26,
+                    sex:'Male'
+                },
+                {
+                    name:'tracy',
+                    age:22,
+                    sex:'Female'
+                },
+                {
+                    name:'chris',
+                    age:36,
+                    sex:'Male'
+                }]
+            }
+        })
+    </script>
+</html>

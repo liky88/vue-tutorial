@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-on</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <p><input type="text" v-model="message"></p>
+            <p>
+                <!--click事件直接绑定一个方法-->
+                <button v-on:click="greet">Greet</button>
+            </p>
+            <p>
+                <!--click事件使用内联语句-->
+                <button v-on:click="say('HI')">Hi</button>
+                <!--缩写语法-->
+                <button @click="say(message)">缩写语法 Hi </button>
+                <label @click="say(message)">缩写语法 Hi </label>
+            </p>
+        </div>
+    </body>
+    <script src="../common/js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: "hello, vue.js"
+            },
+            //define methods here
+            methods: {
+                greet: function() {
+                    //`this` refer to the vm
+                    alert(this.message)
+                },
+                say: function(msg) {
+                    alert(msg)
+                }
+            }
+
+        })
+    </script>
+</html>

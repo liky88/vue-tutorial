@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>helloworld</title>
+</head>
+
+<body>
+    <!-- view-->
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="text" v-model="message" />
+    </div>
+</body>
+
+<script src="./js/vue.js"></script>
+
+<script>
+    //model
+    var exampleData = {
+        message: 'hello world!'
+    }
+
+    //define vue instance or viewmodel
+    //which used to connect view and model
+    var vm1 = new Vue({
+        el: '#app',
+        data: exampleData
+    })
+</script>
+
+</html>
